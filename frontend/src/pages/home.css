@@ -1,0 +1,525 @@
+/* home.css – styles only for the Home page */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+  --green-primary: #2E7D32;
+  --green-dark: #1B5E20;
+  --green-light: #E8F5E9;
+  --white: #FFFFFF;
+  --ink: #16241A;
+  --slate: #5C6F5E;
+  --amber: #F2A93B;
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* All rules are now scoped under .home – no conflict with dashboard */
+.home {
+  font-family: var(--font-body);
+  color: var(--ink);
+  overflow-x: hidden;
+  background: #f4f7f4;
+}
+
+.home a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+/* Navbar – fixed at top with blur */
+.home .navbar {
+  position: sticky;
+ transition: background 0.3s, padding 0.3s, box-shadow 0.3s;
+  background: rgb(11, 67, 8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.home .navbar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home .navbar__logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home .navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.home .navbar__link {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.home .navbar__link:hover {
+  color: var(--amber);
+}
+
+.home .navbar__cta {
+  background: #10100f;
+  /* dark, as you had */
+  color: var(--white);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.home .navbar__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.3);
+}
+
+.home .navbar--solid {
+  background: var(--green-dark);
+  padding: 14px 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: none;
+}
+
+/* Hero section – uses image from public folder for reliability */
+.home .hero {
+  position: relative;
+  min-height: 100vh;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 180px 37px 90px;
+  /* extra top padding to clear navbar */
+  background: url('../assets/bg.jpg') center / cover no-repeat;
+  /* if you prefer to keep the image in src/assets, use the import method */
+}
+
+/* If image not showing, try an absolute URL: */
+/* background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600') center / cover no-repeat; */
+
+.home .hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(30, 15, 165, 0.6) 0%, rgba(19, 66, 22, 0.92) 100%);
+}
+
+.home .hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+
+.home .hero__eyebrow {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  color: var(--green-light);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.home .hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  color: var(--white);
+  margin: 0 0 24px;
+}
+
+.home .hero__subtitle {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--green-light);
+  margin: 0 0 36px;
+  max-width: 520px;
+}
+
+.home .hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.home .btn {
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-block;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.home .btn--primary {
+  background: var(--white);
+  color: var(--green-dark);
+}
+
+.home .btn--primary:hover {
+  transform: translateY(-2px);
+}
+
+.home .btn--ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.home .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* optional plant image on hero */
+.home .hero__visual {
+  position: absolute;
+  right: 4%;
+  bottom: 0;
+  width: 42%;
+  max-width: 520px;
+  z-index: 1;
+}
+
+.home .hero__plant {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.25));
+}
+
+/* scan line animation – only on home hero */
+.home .scan-line {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  height: 3px;
+  top: 4%;
+  background: linear-gradient(90deg, transparent, var(--green-light), transparent);
+  box-shadow: 0 0 16px 2px rgba(232, 245, 233, 0.8);
+  animation: scan-sweep 2.4s ease-in-out 0.6s 1 both;
+}
+
+@keyframes scan-sweep {
+  0% {
+    top: 4%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 92%;
+    opacity: 0;
+  }
+}
+
+/* Shared section titles – scoped */
+.home .section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 12px;
+  color: var(--green-dark);
+}
+
+.home .section-subtitle {
+  text-align: center;
+  color: var(--slate);
+  margin: 0 0 48px;
+  font-size: 1rem;
+}
+
+/* Crops section */
+.home .crops {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 100px 32px;
+}
+
+.home .crops__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.home .crop-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(46, 125, 50, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.home .crop-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(46, 125, 50, 0.15);
+}
+
+.home .crop-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  background: #e0e8e0;
+}
+
+.home .crop-card__name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+  color: var(--green-dark);
+}
+
+.home .crop-card__detects {
+  font-size: 0.9rem;
+  color: var(--slate);
+  margin: 0;
+}
+
+/* Why GreenEye section */
+.home .why {
+  background: var(--green-dark);
+  padding: 100px 32px;
+}
+
+.home .why .section-title {
+  color: var(--white);
+}
+
+.home .why__grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.home .why-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.home .why-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.home .why-card__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--green-primary);
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.home .why-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--white);
+  margin: 0 0 8px;
+}
+
+.home .why-card__copy {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--green-light);
+  margin: 0;
+}
+
+/* Footer */
+.home .footer {
+  background: var(--ink);
+  padding: 56px 32px 32px;
+  color: var(--green-light);
+}
+
+.home .footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home .footer__brand {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.home .footer__tagline {
+  font-size: 0.9rem;
+  margin: 0 0 24px;
+  color: rgba(232, 245, 233, 0.7);
+}
+
+.home .footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+.home .footer__links a:hover {
+  color: var(--amber);
+}
+
+.home .footer__copyright {
+  font-size: 0.8rem;
+  color: rgba(232, 245, 233, 0.5);
+  margin: 0;
+}
+
+/* Focus & reduced motion */
+.home a:focus-visible,
+.home button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home .scan-line {
+    animation: none;
+    opacity: 0.4;
+  }
+
+  .home .crop-card,
+  .home .navbar__cta,
+  .home .btn,
+  .home .why-card {
+    transition: none;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .home .hero__visual {
+    display: none;
+  }
+
+  .home .crops__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home .why__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home .crops__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home .why__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home .navbar__inner {
+    padding: 0 20px;
+  }
+
+  .home .hero {
+    padding: 100px 20px 60px;
+    min-height: 100vh;
+    background-attachment: scroll;
+  }
+
+  .home .hero__content {
+    max-width: 100%;
+  }
+
+  .home .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home .btn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .home .navbar__actions {
+    gap: 12px;
+  }
+
+  .home .navbar__cta {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .home .navbar__link {
+    font-size: 0.85rem;
+  }
+
+  .home .hero__title {
+    font-size: 2rem;
+  }
+
+  .home .crops {
+    padding: 60px 16px;
+  }
+
+  .home .why {
+    padding: 60px 16px;
+  }
+}

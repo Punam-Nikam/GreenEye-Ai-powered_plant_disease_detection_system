@@ -1,0 +1,365 @@
+/* history.css */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.history-page {
+  font-family: "DM Sans", sans-serif;
+  background: #f6f8f6;
+  min-height: 100vh;
+  color: #111;
+}
+
+/* ── NAVBAR ──────────────────────────────────────── */
+.hist-navbar {
+  background: #1a3a2a;
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.hist-navbar__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.hist-navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: auto;
+}
+.hist-navbar__links {
+  display: flex;
+  gap: 8px;
+}
+.hist-nav-link {
+  text-decoration: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.hist-nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.hist-nav-link--active { color: #9de09d; background: rgba(76,175,80,0.15); }
+
+.hist-logout {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7);
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.hist-logout:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+/* ── MAIN ─────────────────────────────────────────── */
+.hist-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+.hist-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+.hist-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 6px;
+}
+.hist-sub {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  max-width: 500px;
+}
+.hist-count {
+  text-align: right;
+  flex-shrink: 0;
+}
+.hist-count strong {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  color: #2e7d32;
+  line-height: 1;
+}
+.hist-count span {
+  font-size: 12px;
+  color: #999;
+}
+
+/* ── LOADING ──────────────────────────────────────── */
+.hist-loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+.hist-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #4caf50;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── ERROR ────────────────────────────────────────── */
+.hist-error {
+  text-align: center;
+  padding: 40px;
+  background: #fdecea;
+  border-radius: 12px;
+  color: #c62828;
+}
+.hist-error button {
+  margin-top: 12px;
+  background: #c62828;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ── EMPTY ────────────────────────────────────────── */
+.hist-empty {
+  text-align: center;
+  padding: 64px 32px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e5e7e5;
+}
+.hist-empty__icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.hist-empty h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+.hist-empty p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0 auto 24px;
+}
+.hist-scan-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.hist-scan-btn:hover { opacity: 0.9; }
+
+/* ── SCAN CARDS ───────────────────────────────────── */
+.hist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.scan-card {
+  background: #fff;
+  border: 1px solid #e5e7e5;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.scan-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+.scan-card--open { border-color: #4caf50; }
+
+.scan-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  cursor: pointer;
+  gap: 16px;
+}
+.scan-card__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.scan-card__icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+.scan-card__disease {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 3px;
+}
+.scan-card__date {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 1px;
+}
+.scan-card__file {
+  font-size: 11px;
+  color: #bbb;
+}
+
+.scan-card__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Severity badges */
+.severity-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+.badge--high   { background: #fdecea; color: #c62828; }
+.badge--medium { background: #fff8e1; color: #e65100; }
+.badge--low    { background: #e8f5e9; color: #2e7d32; }
+
+.scan-card__toggle {
+  font-size: 12px;
+  color: #999;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── EXPANDED BODY ────────────────────────────────── */
+.scan-card__body {
+  padding: 0 20px 20px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scan-detail {
+  padding-top: 16px;
+}
+.scan-detail h4 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4caf50;
+  margin-bottom: 6px;
+}
+.scan-detail p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+}
+.scan-detail ul {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.scan-detail ul li {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.shop-tip {
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* Product list for local shop */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  background: #f9fbf9;
+  border: 1px solid #e8f5e9;
+  border-radius: 10px;
+  padding: 14px;
+}
+.product-item__info strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+.product-item__info p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+.product-item__btns {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.buy-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+.buy-btn:hover { opacity: 0.85; }
+.buy-btn--amazon  { background: #ff9900; color: #fff; }
+.buy-btn--flipkart { background: #2874f0; color: #fff; }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .hist-main { padding: 24px 16px; }
+  .hist-header { flex-direction: column; gap: 12px; }
+  .hist-count { text-align: left; }
+  .scan-card__header { flex-direction: column; align-items: flex-start; }
+  .scan-card__right { width: 100%; justify-content: space-between; }
+  .product-item { flex-direction: column; }
+  .product-item__btns { flex-direction: row; }
+  .hist-navbar__inner { padding: 0 16px; }
+}

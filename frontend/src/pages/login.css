@@ -1,0 +1,209 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== BACKGROUND WRAPPER ===== */
+.login-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("https://img.freepik.com/premium-photo/young-vegetable-crops-emerald-green-field-showcase-beauty-sustainable-farming-growth-young-crops-vibrant-healthy_38013-10384.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ===== LOGIN BOX ===== */
+.login-container {
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 35px;
+
+  background: rgba(238, 241, 235, 0.88);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-radius: 18px;
+  text-align: center;
+
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.logo svg {
+  width: 40px;
+  height: 40px;
+}
+
+.logo h1 {
+  font-size: 26px;
+  color: #2e7d32;
+}
+
+/* ===== TEXT ===== */
+h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* ===== INPUT FIELDS ===== */
+.input-group {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+/* FLOAT LABEL */
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 0 5px;
+  font-size: 13px;
+  color: #999;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -8px;
+  font-size: 12px;
+  color: #2e7d32;
+}
+
+/* ===== FORGOT PASSWORD ===== */
+.forgot-password {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  color: #2e7d32;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* ===== BUTTON ===== */
+.login-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(76, 175, 80, 0.4);
+}
+
+/* ===== SIGNUP LINK ===== */
+.signup-link {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.error-msg {
+  background: #fdecea;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.success-msg {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    padding: 30px 25px;
+  }
+}
+

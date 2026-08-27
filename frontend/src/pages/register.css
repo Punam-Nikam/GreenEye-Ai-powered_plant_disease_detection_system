@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.register-wrapper {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("https://img.freepik.com/premium-photo/young-vegetable-crops-emerald-green-field-showcase-beauty-sustainable-farming-growth-young-crops-vibrant-healthy_38013-10384.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.register-box {
+  background: rgba(238, 241, 235, 0.88);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  padding: 45px 40px;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+
+  width: 380px;
+  text-align: center;
+
+  animation: fadeIn 0.8s ease-in-out;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.logo svg {
+  width: 40px;
+  height: 40px;
+}
+
+.logo h1 {
+  font-size: 26px;
+  color: #2e7d32;
+}
+.register-box h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #222;
+}
+p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.register-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+
+  font-size: 14px;
+  outline: none;
+
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.register-box input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+.register-box button {
+  width: 100%;
+  padding: 14px;
+
+  background: linear-gradient(135deg, #4caf50, #30c437);
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.register-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.register-box p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #444;
+}
+
+.register-box a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-box a:hover {
+  text-decoration: underline;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .register-box {
+    width: 90%;
+    padding: 30px;
+  }
+}
