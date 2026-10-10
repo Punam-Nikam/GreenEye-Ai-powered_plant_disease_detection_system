@@ -3,6 +3,9 @@
 
 GreenEye is a full-stack web application that detects plant diseases from photos using Google Gemini AI. Upload a photo of any plant leaf and receive an instant diagnosis with cause, treatment, and prevention steps.
 
+GreenEye project using machine learning model - check out : 
+https://github.com/Punam-Nikam/GreenEye-ML_based_Plant_disease_detection_and_prevention_system
+
 ---
 
 ## Tech Stack
